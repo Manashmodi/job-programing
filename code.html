@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Programming Contests App JavaScript</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+                integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+                crossorigin="anonymous">
+
+</head>
+
+<body>
+
+     
+
+        <div class="container">
+                <center><h1 class="display-4" style="color:white;">Programming Contests</h1></center>
+                <div id="cardContainer" class="row" style="justify-content: center;">
+
+                </div>
+        </div>
+
+
+        <script >
+            let url = "https://kontests.net/api/v1/all"
+let response = fetch(url)
+response.then((v) => {
+        return v.json()
+}).then((contests) => {
+        console.log(contests)
+        ihtml = ""
+        for (item in contests) {
+                console.log(contests[item])
+                ihtml += `
+                <div class="card mx-2 my-2" style="width: 22rem;">
+                                <img src="${randomImage()}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                        <h5 class="card-title">${contests[item].name}</h5>
+                                        <p class="card-text"> Status is ${contests[item].status} and site is ${contests[item].site}</p>
+                                        <p class="card-text"> In 24 Hours? ${contests[item].in_24_hours} </p>
+                                        <p>Starts at: ${contests[item].start_time}
+                                        <p>End time at: ${contests[item].end_time}
+                                        <a href="${contests[item].url}" class="btn btn-primary my-4">Visit Contest</a>
+                                </div>
+                        </div>
+                `
+        } 
+         
+        cardContainer.innerHTML = ihtml
+})  
+
+
+        </script> 
+        <script>
+          const images = [ 
+          "https://th.bing.com/th/id/OIP.N1RAjyTYbbrA0kpARUDBVQHaEK?w=322&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+          "https://th.bing.com/th/id/OIP.-TNXIuccM4WKuJN5hEjBfAHaEo?w=298&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+          "https://th.bing.com/th/id/OIP.jrKJbFDolDaNKvRhVZNxLAHaEK?w=330&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+          "https://th.bing.com/th/id/OIP.Tv5h1v4hvvlpSDVbnEhg4wHaE8?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+          "https://th.bing.com/th/id/OIP.T9hQ_teJasBCIlZH_R4YoQHaEK?w=303&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+          "https://th.bing.com/th/id/OIP.6A7SbNtSvfRJVj8IyabxHwHaEK?w=296&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+          "https://th.bing.com/th/id/OIP.bzEZ5eBp83R6OUOHh96_-AAAAA?w=209&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+          "https://th.bing.com/th/id/OIP.ZsuJ7uJdrHQYI76d8BeyFQHaEc?w=299&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+          
+          "https://th.bing.com/th/id/OIP._RUlOpi51hpm5Y18XTvSwAHaFj?w=206&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+          "https://th.bing.com/th/id/OIP.INv3vSuVkEBhjf5OIeNBwgHaFP?w=227&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+           "https://th.bing.com/th/id/OIP.INv3vSuVkEBhjf5OIeNBwgHaFP?w=227&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+           "https://th.bing.com/th/id/OIP.J3Jw8CPha5YUKEkHoIOG0wHaEK?w=305&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+           "https://th.bing.com/th/id/OIP.E1AshoVNJG4fuX1O_Ygn4gHaEK?w=269&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+           "https://th.bing.com/th/id/OIP.8hBk5yLGmKR4ICfrRibeLQHaEK?w=309&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+           "https://th.bing.com/th/id/OIP.4HRv_cmqtktMnadKU8as0wHaEK?w=287&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+           "https://th.bing.com/th/id/OIP.Qa32R7APgfDCzO_AXGqVRgHaEK?w=293&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+          // add more image URLs here
+      ];
+  
+      function randomImage() {
+          return images[Math.floor(Math.random() * images.length)];
+      }
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+                crossorigin="anonymous"></script>
+
+        <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+        <style> 
+            body {
+             
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: black;
+              }
+            .card {
+                transition: transform 0.5s;
+            }
+            
+            .card:hover {
+                transform: translateZ(50px);
+                box-shadow: 0px 0px 20px white;
+            }
+            
+            .card-img-top {
+                border-radius: 10px;
+            }
+            
+            @media (max-width: 576px) {
+                .card {
+                    width: 100%;
+                    margin: 10px;
+                }
+            }
+            
+        </style>
+</body>

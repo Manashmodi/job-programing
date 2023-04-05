@@ -53,21 +53,21 @@
                 </div>
                 </div> 
 
-        <div style="margin-top:5%">
+        <div style="margin-top:5%"class="op">
             <img src="https://cdn.shopify.com/s/files/1/0882/6838/files/ourservices_banner_1024x1024.png?12342069308034537252"alt=""class="img-responcive"style="width:100%;height:25%" />
         </div>  
 
-        <div class="row " style="margin-top:3%;margin-left:4%">
+        <div class="row rp" >
              <div class="col-md-5 col-xs-12 tileContainerpp o ">
               <p class="text text-justify">By visiting various online resources such as GitHub, Stack Overflow, Codecademy, Udacity, and others, you can access a vast array of programming content enabling you to learn new programming languages, improve your coding skills, and solve coding challenges</p>
-              <div class="ko" >><a href="code.html">View Project</a></div>
+              <div class="ko" ><a href="code.html">View Project</a></div>
               </div>
               <div class="col-md-5 col-xs-12 tileContainerpp oi">
                 <h4 style="font-size:25px;color:blue">Jobs for software developers</h4>
                 <p class="text text-justify">
                    
                     To find software engineering jobs, visit job search websites such as LinkedIn, Glassdoor, Indeed, and Monster, which offer a wide range of job listings for different find a job software engineering  </p>
-                <div >><a href="job.html"class="iu">View Project</a></div>
+                <div ><a href="job.html"class="iu">View Project</a></div>
               </div>  
         </div>
         <footer class="footer">
@@ -105,6 +105,10 @@
             height: 55%;
             width: 100%;
         } 
+        .rp{
+          margin-top:3%;
+          margin-left:4%;
+        }
         .text{
            margin-top:1%;
            font-size:20px;
@@ -117,22 +121,7 @@
             margin-top: 2%;
             display: block;
         } 
-        @media (max-width: 768px) {
-            .tileContainerpp {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-            }
-            .tileContainerpp p {
-              font-size: 16px;
-              text-align: center;
-            }
-            .tileContainerpp .ko {
-              margin-top: 10px;
-              text-align: center;
-            }
-          }
+
           
 
         .tileContainerpp:hover{
@@ -166,7 +155,69 @@
           }  
 /* Small devices (up to 768px) */
 
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: 14px;
+  }
+
+  .tileContainerpp {
+    width: 40%;
+    height: 20%;
+    margin-top:2% ;
+    max-width: -5%;
+  } 
+  .o{
+    height: 20%;
+   
+  } 
+  .oi{
+    height: 20%;
+   
+  } 
+  a {
+    display: block;
+    text-align: center;
+    
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 30%;
+    width: 100%;
+  }
   
+  a:hover {
+    background-color: #0056b3; 
+
+  } 
+  
+  .op{
+    height:20%
+  }
+  .op img{
+    margin-top:5%;
+    
+  } 
+  .footer{
+    margin-top:3%;
+     
+
+  }
+  .footer .col-sm-6,
+  .footer .col-md-4 {
+    margin-bottom: 0;
+  }
+  
+  /* Footer address and contact styles */
+  .footer address {
+    margin-bottom: 0;
+  }
+  
+  .footer a {
+    display: block;
+    margin-bottom: 10px;
+  }
+} 
           
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
@@ -176,6 +227,17 @@
   
     .tileContainerpp {
       width: calc(50% - 4%);
+      height: 30%;
+      margin-top:2% ;
+      
+    } 
+    .o{
+      height: 30%;
+     
+    } 
+    .oi{
+      height: 30%;
+     
     }
   }
   
@@ -183,6 +245,8 @@
     .tileContainerpp {
       width: 100%;
       margin-left: 0;
+      height: 30%;
+      margin-top:2%
     }
   }
 
